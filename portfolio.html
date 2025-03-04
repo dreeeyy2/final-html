@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="mobile.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <div id="home"></div>
+    <div class="main-nav-bar">
+        <div class="left-nav">
+            <img class="title-img" src="playboylogo.png">
+            <div class="title">MyPortfolio</div>
+        </div>
+        <div class="right-nav">
+            <div onclick="menu()" class="menuPic" ></div>
+            <div class="coll-nav" id="menu">
+                <div><a id="btn-1" class="HV btn-1" href="#home">Home</a></div>
+                <div><a id="btn-2"  class="HV btn-2" href="#about">About</a></div>
+                <div><a id="btn-3"  class="HV btn-3" href="#project">Project</a></div>
+                <div><a id="btn-4"  class="HV hire-btn" href="#contact">Hire Me</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-view">
+        <div class="left-view">
+            <img class="human-img" src="pic.jpg">
+            <img class="small-img" src="ball.jpg">
+        </div>
+        <div class="right-view">
+            <div class="main-title">Explore My <br>Portfolio</div>
+            <div class="small-title">Discover My Experience as a Student</div>
+            <div class="main-btn">
+                <div><a id="btn-5"  class="main-btn-1" href="#about">Resume</a></div>
+                <div><a id="btn-6"  class="main-btn-2" href="#contact">Contact</a></div>
+            </div>
+            <div class="small-title-2">The only way to do great work is to love what you do</div>
+        </div>
+    </div>
+
+    <div class="about" id="about">
+        <div class="ani-box">
+            <div class="ani-over">
+                <div class="pic1"></div>
+                <div class="pic2"></div>
+                <div class="pic3"></div>
+            </div>
+            
+        </div>
+        <div class="about-flout">
+            <h1 class="about-title">
+                About
+            </h1>
+            <div class="about-text">
+                As a third-year IT student, I’m building a solid foundation in technical skills, gaining hands-on experience with programming, software development, and networking. I’ve worked on various projects, diving into advanced topics like algorithms, databases, and web development. I’m also exploring areas like AI and cybersecurity while developing valuable soft skills like time management and teamwork. With more opportunities for internships and real-world experience, I’m excited to continue growing and preparing for a career in the tech industry.
+            </div>
+        </div>
+    </div>
+
+    <div class="project" id="project">
+        <div class="project-set">
+            <img class="project-img-1" src="p2.png">
+            <div class="project-text">
+                <h2>Welcome to My Portfolio!</h2>
+                <div class="pro-text">
+                    I'm ANDRE P LAGUERTA, Welcome to my portfolio! I’m a third-year IT student with a strong foundation in programming, software development, and networking. I’ve worked on various projects, focusing on areas like AI, databases, web development, and cybersecurity. Along with technical skills, I’ve developed key soft skills such as collaboration and time management. This portfolio highlights my growth and passion for technology as I prepare for future opportunities in the IT industry.</div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="contact" id="contact">
+        <div class="con-title">Contact</div>
+        <div class="email">
+            <input type="email" placeholder="Email Address">
+        </div>
+        <div class="message">
+            <textarea placeholder="Your massage..."></textarea>
+        </div>
+    </div>
+    
+    <script>
+        act = false;
+        //const btn_pos = [true, false];
+
+        let floatBox = document.querySelector(".coll-nav");
+        let color_btn_1 = document.querySelector("#btn-1");
+        let color_btn_2 = document.querySelector("#btn-2");
+        let color_btn_3 = document.querySelector("#btn-3");
+        function menu() {
+            if (act==false) {
+                floatBox.style.visibility = "visible";
+                act = true;
+            } else{
+                floatBox.style.visibility = "hidden";
+                act = false;
+            }    
+	    }
+
+        window.addEventListener("scroll", (event) => {
+            let scroll = this.scrollY;
+
+            if (scroll <= 300) {
+                //console.log(scroll)
+                color_btn_1.style.color = "Tomato";
+                color_btn_2.style.color = "darkgray";
+                color_btn_3.style.color = "darkgray";
+            }else if (scroll >= 600 && scroll <=1200) {
+                //console.log(scroll)
+                color_btn_1.style.color = "darkgray";
+                color_btn_2.style.color = "Tomato";
+                color_btn_3.style.color = "darkgray";
+            } else if (scroll >= 1400 && scroll <=3500){
+                color_btn_1.style.color = "darkgray";
+                color_btn_2.style.color = "darkgray";
+                color_btn_3.style.color = "Tomato";
+            }
+            else if (scroll >= 3600){
+                color_btn_1.style.color = "darkgray";
+                color_btn_2.style.color = "darkgray";
+                color_btn_3.style.color = "darkgray";
+            }
+        });
+    </script>
+</body>
+</html>
